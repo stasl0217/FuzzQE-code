@@ -29,7 +29,7 @@ It usually takes 4 days to a week to finish a run on a NVIDIA® GP102 TITAN Xp (
 
 ## Test
 
-The trained model will be automatically stored under `./trained_models`. The model name will be `[WANDB_RUN_NAME].pt`.
+The trained model will be automatically stored under the folder `./trained_models`. The model name will be `[WANDB_RUN_NAME].pt`.
 
 To test a trained model, you can use the following command:
 
@@ -40,7 +40,7 @@ By default, the test tests for product logic. You can also test for other logic 
 
 ### Test the pretrained model
 
-The pretrained FuzzQE model (product logic) for NELL can be downloaded [here](https://drive.google.com/file/d/15ByNcDayg5Vw67SaIk9ZPE3Gfa9tlTmo/view?usp=sharing). You can use the following command to test it:
+The pretrained FuzzQE model (product logic) for NELL can be downloaded [here](https://drive.google.com/file/d/15ByNcDayg5Vw67SaIk9ZPE3Gfa9tlTmo/view?usp=sharing). You can put it under `./trained_models` and use the following command to test it:
 
     python ./test-pretrained-model.py NELL feasible-resonance-1518
 
