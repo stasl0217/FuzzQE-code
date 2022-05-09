@@ -19,7 +19,6 @@ import torch.nn as nn
 from util import log_metrics
 import torch.nn.functional as F
 import os
-from investigation_helper import set_GPU_id
 from investigation_helper import wandb_log_metrics, prepare_new_attributes
 import sys
 
@@ -133,36 +132,44 @@ def test_step(model, easy_answers, hard_answers, args, test_dataloader, query_na
     return metrics
 
 
-model_dir = './trained_models'
-set_GPU_id(gpu_id='7')
-run = sys.argv[1]
 
-logic = 'product'
-model_path = join(model_dir, f'{run}.pt')
-model = torch.load(model_path)
+if __name__=="__main__":
 
+    model_dir = './trained_models'
 
-arg_str = f'--do_test --cuda --data_path data/NELL-betae --test_batch_size 2 --logic {logic}'
+    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+    os.environ["CUDA_VISIBLE_DEVICES"] = '7'
 
-arg_str = arg_str.split()
-args = parse_args(arg_str)
-args.nentity = model.nentity
-model.conjunction_net.use_attention = args.use_attention
-prepare_new_attributes(model)
+    data = sys.argv[1]
+    run = sys.argv[2]
+
+    logic = 'product'
+    model_path = join(model_dir, f'{run}.pt')
+    model = torch.load(model_path)
 
 
 
-train_path_iterator, train_other_iterator, valid_dataloader, test_dataloader,\
-    valid_hard_answers, valid_easy_answers, \
-    test_hard_answers, test_easy_answers = load_data(args, query_name_dict, args.tasks)
+    arg_str = f'--do_test --cuda --data_path data/{data}-betae --test_batch_size 2 --logic {logic}'
+
+    arg_str = arg_str.split()
+    args = parse_args(arg_str)
+    args.nentity = model.nentity
+    model.conjunction_net.use_attention = args.use_attention
+    prepare_new_attributes(model)
 
 
-data_dir = args.data_path
-rel_id2str = pickle.load(open(join(data_dir, 'id2rel.pkl'), 'rb'))
+
+    train_path_iterator, train_other_iterator, valid_dataloader, test_dataloader,\
+        valid_hard_answers, valid_easy_answers, \
+        test_hard_answers, test_easy_answers = load_data(args, query_name_dict, args.tasks)
+
+
+    data_dir = args.data_path
+    rel_id2str = pickle.load(open(join(data_dir, 'id2rel.pkl'), 'rb'))
 
 
 
-metrics = test_step(model, test_easy_answers, test_hard_answers, args, test_dataloader, query_name_dict)
-print(metrics)
+    metrics = test_step(model, test_easy_answers, test_hard_answers, args, test_dataloader, query_name_dict)
+    print(metrics)
 
-a = wandb_log_metrics(metrics, args)
+    a = wandb_log_metrics(metrics, args)
