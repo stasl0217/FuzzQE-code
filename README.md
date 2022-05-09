@@ -15,7 +15,7 @@ Install the dependency using:
 
 Download data from [here](http://snap.stanford.edu/betae/KG_data.zip) and put it under `data` folder.
 
-The directory structure should be like `PROJECT_DIR/data/NELL-betae/train-queries.pkl`, etc.
+The directory structure should be like `[PROJECT_DIR]/data/NELL-betae/train-queries.pkl`.
 
 
 Only FB15k-237 and NELL995 are used in our study.
@@ -24,7 +24,7 @@ Only FB15k-237 and NELL995 are used in our study.
 ## Train
 Training script example: `./run.sh`
 
-It usually takes 4 days to a week to finish a run on  NVIDIA® GP102 TITAN Xp (12GB) GPU. 
+It usually takes 4 days to a week to finish a run on a NVIDIA® GP102 TITAN Xp (12GB) GPU. 
 
 
 ## Test
@@ -35,10 +35,12 @@ To test a trained model, you can use the following command:
 
     python ./test-pretrained-model.py [DATA_NAME] [WANDB_RUN_NAME]
 
+By default, the test tests for product logic. You can also test for other logic systems ('godel' or 'luka') by modifying the `logic` variable in the script.
+
 
 ### Test the pretrained model
 
-The pretrained model for NELL can be downloaded here. You can use the following command to test it:
+The pretrained FuzzQE model (product logic) for NELL can be downloaded [here](https://drive.google.com/file/d/15ByNcDayg5Vw67SaIk9ZPE3Gfa9tlTmo/view?usp=sharing). You can use the following command to test it:
 
     python ./test-pretrained-model.py NELL feasible-resonance-1518
 
