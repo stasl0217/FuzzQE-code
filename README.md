@@ -1,4 +1,4 @@
-Resources and code for paper "Fuzzy Logic based Logical Query Answering on Knowledge Graphs"
+Resources and code for paper "Fuzzy Logic based Logical Query Answering on Knowledge Graphs".
 
 
 ## Environment
