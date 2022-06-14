@@ -1,3 +1,6 @@
+Resources and code for paper "Fuzzy Logic based Logical Query Answering on Knowledge Graphs"
+
+
 ## Environment
 Make sure your local environment has the following installed:
 
@@ -28,7 +31,7 @@ It usually takes 4 days to a week to finish a run on a NVIDIA® GP102 TITAN Xp (
 
 
 _
-TODO: More training scripts for experiment reproduction will be added soon._
+TODO: More training scripts for easy experiment reproduction will be added soon._
 
 
 
@@ -52,4 +55,20 @@ The pretrained FuzzQE model (product logic) for NELL can be downloaded [here](ht
 
 _
 TODO: More pretrained models will be updated._
+
+
+
+### Reference
+Please refer to our paper if you find the resources useful. 
+
+Xuelu Chen, Ziniu Hu, Yizhou Sun. Probabilistic Box Embeddings for Uncertain Knowledge Graph Reasoning. *Proceedings of the Thirty-sixth AAAI Conference on Artificial Intelligence (AAAI), 2022.*
+
+
+
+    @inproceedings{chen2021fuzzyqa,
+        title={Fuzzy Logic based Logical Query Answering on Knowledge Graphs},
+        author={Chen, Xuelu and Hu, Ziniu and Sun, Yizhou,
+        booktitle={Proceedings of the Thirty-sixth AAAI Conference on Artificial Intelligence (AAAI)},
+        year={2022}
+    }
 
