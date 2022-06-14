@@ -30,8 +30,8 @@ Training script example: `./run.sh`
 It usually takes 4 days to a week to finish a run on a NVIDIA® GP102 TITAN Xp (12GB) GPU. 
 
 
-_
-TODO: More training scripts for easy experiment reproduction will be added soon._
+
+*TODO: More training scripts for easy training will be added soon.*
 
 
 
@@ -53,8 +53,7 @@ The pretrained FuzzQE model (product logic) for NELL can be downloaded [here](ht
     python ./test-pretrained-model.py NELL feasible-resonance-1518
 
 
-_
-TODO: More pretrained models will be updated._
+*TODO: More pretrained models will be uploaded soon.*
 
 
 
