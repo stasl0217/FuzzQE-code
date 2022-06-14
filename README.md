@@ -66,7 +66,7 @@ Xuelu Chen, Ziniu Hu, Yizhou Sun. Fuzzy Logic based Logical Query Answering on K
 
     @inproceedings{chen2021fuzzyqa,
         title={Fuzzy Logic based Logical Query Answering on Knowledge Graphs},
-        author={Chen, Xuelu and Hu, Ziniu and Sun, Yizhou,
+        author={Chen, Xuelu and Hu, Ziniu and Sun, Yizhou}
         booktitle={Proceedings of the Thirty-sixth AAAI Conference on Artificial Intelligence (AAAI)},
         year={2022}
     }
