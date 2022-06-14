@@ -58,7 +58,7 @@ TODO: More pretrained models will be updated._
 
 
 
-### Reference
+## Reference
 Please refer to our paper if you find the resources useful. 
 
 Xuelu Chen, Ziniu Hu, Yizhou Sun. Probabilistic Box Embeddings for Uncertain Knowledge Graph Reasoning. *Proceedings of the Thirty-sixth AAAI Conference on Artificial Intelligence (AAAI), 2022.*
